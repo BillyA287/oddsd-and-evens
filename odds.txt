@@ -1,0 +1,103 @@
+import java.util.*;
+
+public class oddsandEvens {
+
+    public static void main(String[]args) {
+        Scanner sc = new Scanner( System.in );
+
+        String userName;
+        String player1;
+
+
+        System.out.println( " Lets play a game called " + " odds and evens " );
+
+
+        System.out.println( " What is your name? " );
+
+        userName = sc.next();
+
+        System.out.println( " Nice to meet you " + userName + " which do you choose ? " + " (O)dds or (E)vens? " );
+
+        player1 = sc.next();
+
+        if (player1.equals( "e" )) {
+            System.out.println( userName + " has picked even the computer will be odds " );
+        }
+        if (player1.equals( "o" )) {
+            System.out.println( userName + " has picked odd the computer will be evens " );
+         }
+
+        System.out.println( "--------------------" );
+
+        playThegame(userName,userName);
+
+    }
+
+
+    public static void playThegame(String userName,String usersChoice){
+
+        Scanner sc = new Scanner( System.in );
+
+        System.out.println(" How many finger(s) do you put out" );
+        //String userName;
+        int fingers;
+
+        fingers = sc.nextInt();
+
+        Random rand = new Random();
+        int computer = rand.nextInt(6);
+
+        System.out.println(" the computer has played " + computer + " finger(s) ");
+
+        System.out.println( "--------------------" );
+        int sum;
+
+        sum = fingers + computer;
+
+        System.out.println( fingers + computer );
+
+        boolean sumIsEven = sum % 2 == 0;
+
+        if (sumIsEven == true ){
+            if (usersChoice == "E") {
+                System.out.println( sum + " ... is even ");
+                System.out.println( " that means the " + userName +  " wins ");
+            } else {
+                System.out.println( sum + " ... is even ");
+                System.out.println( " that means the " + userName +  " loses ");
+            }
+
+        }else {
+            if (usersChoice == "O") {
+                System.out.println( sum + " ... is odd ");
+                System.out.println( " that means the " + userName +  " wins ");
+            } else {
+                System.out.println( sum + " ... is odd ");
+                System.out.println( " that means the " + userName +  " loses ");
+            }
+           // System.out.println( sum + " ... is even " );
+           // System.out.println(" That means" + userName +" wins " );
+        }
+
+        System.out.println( "--------------------" );
+    }
+
+
+}
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
